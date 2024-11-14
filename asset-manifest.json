@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/meu-novo-app/static/css/main.b37fce80.css",
-    "main.js": "/meu-novo-app/static/js/main.03bdb966.js",
-    "index.html": "/meu-novo-app/index.html",
-    "main.b37fce80.css.map": "/meu-novo-app/static/css/main.b37fce80.css.map",
-    "main.03bdb966.js.map": "/meu-novo-app/static/js/main.03bdb966.js.map"
+    "main.css": "/Marvel/meu-novo-app/static/css/main.b37fce80.css",
+    "main.js": "/Marvel/meu-novo-app/static/js/main.03bdb966.js",
+    "index.html": "/Marvel/meu-novo-app/index.html",
+    "main.b37fce80.css.map": "/Marvel/meu-novo-app/static/css/main.b37fce80.css.map",
+    "main.03bdb966.js.map": "/Marvel/meu-novo-app/static/js/main.03bdb966.js.map"
   },
   "entrypoints": [
     "static/css/main.b37fce80.css",
