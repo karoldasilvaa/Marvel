@@ -1,6 +1,13 @@
 import './App.css';
 import axios from 'axios';
 import { useState, useEffect} from 'react';
+import logoMarvel from './assets/logo/Group@2x.png';
+import lupaIcone from './assets/busca/Lupa/Shape.png';
+import heroiIcone from './assets/icones/heroi/noun_Superhero_2227044.png';
+import toggleIconeDireito from './assets/toggle/Group 2@2x.png';
+import toggleIconeEsquerdo from './assets/toggle/Group 6@2x.png';
+import toggleIconeCoracao from './assets/icones/heart/Path.png';
+import toggleIconeCoracaoBranco from './assets/icones/heart/Path Copy 2.png';
 
 //https://gateway.marvel.com:443/v1/public/characters?apikey=d0d2ce9e8c4470ebb1d700c4f6ddc0cd
 
@@ -26,7 +33,33 @@ function App() {
 
   return (
   <>
-    <h1 className='titulo'>Marvel</h1>
+    <img src={logoMarvel} alt="Marvel" className="logo-marvel"/>
+    <h1 className='titulo'>EXPLORE O UNIVERSO</h1>
+    <p className='primeiro-paragrafo'>Mergulhe no domínio deslumbrante de todos os personagens clássicos que você ama - e aqueles que você ama descobrirá em breve!</p>
+
+    <div className="campo-filtro">
+    <img src={lupaIcone} alt="Lupa" className="icone-lupa" />
+      <input
+        type="text"
+        placeholder="Pesquisar por heróis"
+        className="input-pesquisa"
+      />
+    </div>
+
+    <div className="filtros">
+      <div className="left">
+        <h4 className="cinza-claro">Encontrados 20 heróis</h4>
+      </div>
+      <div className="right">
+        <img src={heroiIcone} alt="heroi" className="icone-heroi"/>
+        <span className="vermelho">Ordenar por nome - A/Z</span>
+        <img src={toggleIconeDireito} alt="heroi" className="icone-toggle-direito"/>
+        <img src={toggleIconeEsquerdo} alt="heroi" className="icone-toggle-esquerdo"/>  
+        <img src={toggleIconeCoracao} alt="heroi" className="icone-coracao"/>
+        <span className="vermelho">Somente Favoritos</span>
+      </div>
+    </div>
+    
     <div className="App">
       <div className="container">
         {personagens.length > 0 ? (
@@ -38,7 +71,8 @@ function App() {
                 className="imagem-cartao"
               />
               <div className="detalhesPer">
-                <h5 className="nome-personagem">{per.name}</h5>
+                <span className="nome-personagem">{per.name}</span>
+                <img src={toggleIconeCoracaoBranco} alt="heroi" className="icone-coracao-branco"/>
               </div>
             </div>
           ))
@@ -47,6 +81,9 @@ function App() {
         )}
       </div>
     </div>
+
+    <footer className='footer'>
+    </footer>
   </>
   );
 }

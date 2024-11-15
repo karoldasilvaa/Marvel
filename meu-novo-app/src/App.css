@@ -1,3 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+  body {
+    font-family: 'Roboto', sans-serif;
+  }
+
 .container {
   display: flex;
   flex-wrap: wrap;
@@ -6,23 +12,125 @@
 }
 
 .cartao {
-  width: 200px;
-  background-color: #fff;
-  border-radius: 8px;
-  border: 1px solid #000;
-  overflow: hidden;
+  width: 250px;
+  cursor: pointer;
 }
 
 .imagem-cartao {
   width: 100%;
   height: 200px;
   object-fit: cover;
+  border-bottom: 5px solid #ff1510;
 }
 
-.titulo {
+.titulo, .primeiro-paragrafo {
   text-align: center;
+
 }
 
-.nome-personagem {
-  text-align: center;
+.campo-filtro {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  width: 75%;
+  margin: 0 auto;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  height: 45px;
+  background-color: #fdecec;
+}
+
+.input-pesquisa {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-right: 8px;
+  padding-left: 30px;  
+  font-size: 1em;
+  border: none;
+  outline: none;
+  flex: 1; 
+  background-color: #fdecec;
+  color: #ff1510;  
+}
+
+.input-pesquisa::placeholder {
+  color: #ff1510;
+}
+
+.icone-lupa {
+  width: 20px;
+  height: 20px;
+  margin-left: 20px;
+}
+
+.icone-toggle-direito, .icone-toggle-esquerdo {
+  width: 75px;
+  cursor: pointer;
+}
+
+.icone-coracao {
+  width: 15px;
+  cursor: pointer;
+}
+
+.vermelho {
+  color: #ff1510;
+}
+
+.cinza-claro {
+  color: #b9b9b9;
+}
+
+.filtros {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; 
+  margin-bottom: 30px;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.left {
+  order: 1;
+}
+
+.right {
+  order: 2;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.icone-heroi, .icone-toggle-direito, .icone-toggle-esquerdo, .icone-coracao {
+  margin-right: 8px;
+}
+
+.icone-toggle-esquerdo {
+  display: none;
+}
+
+.logo-marvel {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 300px;
+}
+
+.footer {
+  background-color: #ff1510;
+  height: 50px;
+  width: 100%;
+  margin-top: 30px;
+}
+
+.detalhesPer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.icone-coracao-branco {
+  margin-left: 10px;
+  cursor: pointer;
 }
