@@ -17,12 +17,24 @@ import PersonagemDetalhes from './PersonagemDetalhes';
 // has: 4805f8d794c3b1a3894bae4c0dab3752 
 // certo https://gateway.marvel.com:443/v1/public/characters?ts=1&apikey=d0d2ce9e8c4470ebb1d700c4f6ddc0cd&hash=4805f8d794c3b1a3894bae4c0dab3752
 function App() {
-const [personagens, setPersonagens] = useState ([])
+  
+const [personagens, setPersonagens] = useState ([]);
+const [pesquisa, setPesquisa] = useState("");
+
 useEffect(() => {
 axios.get('https://gateway.marvel.com:443/v1/public/characters?ts=1&apikey=d0d2ce9e8c4470ebb1d700c4f6ddc0cd&hash=4805f8d794c3b1a3894bae4c0dab3752').then(res=>{
 setPersonagens(res.data.data.results)
 }).catch(error=>console.log(error))
 },[])
+
+const personagensFiltrados = personagens.filter(personagem =>
+  personagem.name.toLowerCase().includes(pesquisa.toLowerCase())
+);
+
+const handlePesquisa = (event) => {
+  setPesquisa(event.target.value);
+};
+
 return (
 <Router>
    <Routes>
@@ -39,6 +51,8 @@ return (
             type="text"
             placeholder="Pesquisar por heróis"
             className="input-pesquisa"
+            value = {pesquisa}
+            onChange={handlePesquisa}
             />
       </div>
       <div className="filtros">
@@ -56,8 +70,8 @@ return (
       </div>
       <div className="App">
          <div className="container">
-            {personagens.length > 0 ? (
-            personagens.map((per) => (
+            {personagensFiltrados.length > 0 ? (
+            personagensFiltrados.map((per) => (
             <div className="cartao" key={per.id}>
                <Link to={`/personagem/${per.id}`} className="link-cartao">
                <img
