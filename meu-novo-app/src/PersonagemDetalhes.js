@@ -2,7 +2,7 @@ import React from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import { useState, useEffect} from 'react';
-import logoMarvel from './assets/logo/Group@2x.png';
+import logoMarvel from './assets/logo/Group.png';
 import lupaIcone from './assets/busca/Lupa/Shape.png';
 import livroIcone from './assets/icones/book/Group.png';
 import filmeIcone from './assets/icones/video/Shape.png';
@@ -13,8 +13,6 @@ function PersonagemDetalhes() {
     const [personagem, setPersonagem] = useState(null);
 
     useEffect(() => {
-        //document.body.classList.add('personagem-body');
-
         axios.get(`https://gateway.marvel.com:443/v1/public/characters/${id}?ts=1&apikey=d0d2ce9e8c4470ebb1d700c4f6ddc0cd&hash=4805f8d794c3b1a3894bae4c0dab3752`)
             .then(res => {
                 setPersonagem(res.data.data.results[0]);

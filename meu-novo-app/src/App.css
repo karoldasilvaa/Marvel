@@ -39,6 +39,7 @@
   margin-bottom: 30px;
   height: 45px;
   background-color: #fdecec;
+  
 }
 
 .campo-filtro-personagem {
@@ -51,6 +52,7 @@
   margin-top: 30px;
   margin-bottom: 30px;
   height: 45px;
+  background-color: #fff;
 }
 
 .input-pesquisa {
@@ -62,8 +64,8 @@
   border: none;
   outline: none;
   flex: 1; 
-  background-color: #fdecec;
   color: #ff1510;  
+  background-color: #fdecec;
 }
 
 .input-pesquisa::placeholder {
