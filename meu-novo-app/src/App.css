@@ -143,8 +143,13 @@
   align-items: center;
 }
 
-.icone-coracao-branco {
-  margin-left: 10px;
+.detalhesCoracao {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.icone-coracao-branco, .icone-coracao-vermelho {  
   cursor: pointer;
 }
 
