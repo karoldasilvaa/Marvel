@@ -20,6 +20,7 @@ function App() {
   
 const [personagens, setPersonagens] = useState ([]);
 const [pesquisa, setPesquisa] = useState("");
+const [iconeDireitoVisivel, setIconeDireitoVisivel] = useState(true);
 
 useEffect(() => {
 axios.get('https://gateway.marvel.com:443/v1/public/characters?ts=1&apikey=d0d2ce9e8c4470ebb1d700c4f6ddc0cd&hash=4805f8d794c3b1a3894bae4c0dab3752').then(res=>{
@@ -34,6 +35,20 @@ const personagensFiltrados = personagens.filter(personagem =>
 const handlePesquisa = (event) => {
   setPesquisa(event.target.value);
 };
+
+const ordenarAZ = () => {
+  setIconeDireitoVisivel(!iconeDireitoVisivel);
+
+  const sorted = personagensFiltrados.sort((a, b) => a.name.localeCompare(b.name));
+    setPersonagens(sorted);
+}
+
+const ordenarZA = () => {
+  setIconeDireitoVisivel(!iconeDireitoVisivel);
+
+  const sorted = personagensFiltrados.sort((a, b) => b.name.localeCompare(a.name));
+  setPersonagens(sorted);
+}
 
 return (
 <Router>
@@ -62,8 +77,13 @@ return (
          <div className="right">
             <img src={heroiIcone} alt="heroi" className="icone-heroi"/>
             <span className="vermelho">Ordenar por nome - A/Z</span>
-            <img src={toggleIconeDireito} alt="heroi" className="icone-toggle-direito"/>
-            <img src={toggleIconeEsquerdo} alt="heroi" className="icone-toggle-esquerdo"/>  
+            
+            {iconeDireitoVisivel ? (
+              <img src={toggleIconeDireito} onClick={ordenarZA} alt="heroi" className="icone-toggle-direito"/>
+            ) : (
+              <img src={toggleIconeEsquerdo} onClick={ordenarAZ} alt="heroi" className="icone-toggle-esquerdo"/>  
+            )}
+
             <img src={toggleIconeCoracao} alt="heroi" className="icone-coracao"/>
             <span className="vermelho">Somente Favoritos</span>
          </div>
