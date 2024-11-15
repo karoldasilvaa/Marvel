@@ -157,6 +157,8 @@
 .personagem-body {
   background-color: #e7f6e7;
 }
+
+
 .campo-filtro-personagem {
 
   border: 1px solid transparent;
@@ -207,4 +209,31 @@
   width: 75%;
   margin: auto;
 }
+
+.container-lancamento {
+  padding: 20px;
+}
+
+.cartoes-lancamento {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px; 
+}
+
+.cartao-lancamento {
+  width: 200px; 
+  text-align: center;
+}
+
+.imagem-lancamento {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.nome-personagem-lancamento {
+  font-weight: bold;
+  color: #333;
+}
+
 
