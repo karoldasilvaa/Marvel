@@ -2,7 +2,8 @@
   "name": "meu-novo-app",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://karoldasilvaa.github.io/meu-novo-app",
+  "homepage": "https://karoldasilvaa.github.io/Marvel",
+
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
