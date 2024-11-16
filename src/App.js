@@ -80,7 +80,7 @@ return (
 <Router>
    <Routes>
       <Route
-      path="/"
+      path="/Marvel"
       element={
       <>
       <img src={logoMarvel} alt="Marvel" className="logo-marvel"/>
